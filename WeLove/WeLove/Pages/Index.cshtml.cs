@@ -11,7 +11,7 @@ namespace WeLove.Pages
     public class IndexModel : PageModel
     {
         private readonly ILogger<IndexModel> _logger;
-
+        public List<string> ShowData;
         public IndexModel(ILogger<IndexModel> logger)
         {
             _logger = logger;
@@ -20,6 +20,16 @@ namespace WeLove.Pages
         public void OnGet()
         {
 
+        }
+        public List<string> list = new List<string>();
+        public void OnGetSendData(int id)
+        {
+            ShowData = new List<string>();
+            for (int i = 0; i < 5; i++)
+            {
+                ShowData.Add("" + i);
+            }
+            list= ShowData;
         }
     }
 }
